@@ -1,0 +1,28 @@
+{
+  "produtos": [
+    {"id": "p01", "nome": "Jarro barro Tracunhaém", "tecnica": "ceramica", "regiao": "Tracunhaém", "pedidos": 42},
+    {"id": "p02", "nome": "Prato esmaltado Tracunhaém", "tecnica": "ceramica", "regiao": "Tracunhaém", "pedidos": 28},
+    {"id": "p03", "nome": "Boneca de barro", "tecnica": "ceramica", "regiao": "Tracunhaém", "pedidos": 19},
+    {"id": "p04", "nome": "Rendeira Alto do Moura", "tecnica": "renda", "regiao": "Alto do Moura", "pedidos": 35},
+    {"id": "p05", "nome": "Toalha de renda", "tecnica": "renda", "regiao": "Alto do Moura", "pedidos": 22},
+    {"id": "p06", "nome": "Caminho de mesa renda", "tecnica": "renda", "regiao": "Alto do Moura", "pedidos": 11},
+    {"id": "p07", "nome": "Xilogravura Pilar", "tecnica": "xilogravura", "regiao": "Comunidade do Pilar", "pedidos": 31},
+    {"id": "p08", "nome": "Cordel ilustrado", "tecnica": "xilogravura", "regiao": "Comunidade do Pilar", "pedidos": 17},
+    {"id": "p09", "nome": "Quadro xilo colorido", "tecnica": "xilogravura", "regiao": "Comunidade do Pilar", "pedidos": 9},
+    {"id": "p10", "nome": "Cesto de palha", "tecnica": "cestaria", "regiao": "Comunidade do Pilar", "pedidos": 24},
+    {"id": "p11", "nome": "Bolsa de palha", "tecnica": "cestaria", "regiao": "Comunidade do Pilar", "pedidos": 14},
+    {"id": "p12", "nome": "Sousplat de palha", "tecnica": "cestaria", "regiao": "Alto do Moura", "pedidos": 8}
+  ],
+  "cestas": [
+    ["p01", "p02", "p03"],
+    ["p01", "p02"],
+    ["p04", "p05", "p06"],
+    ["p04", "p05"],
+    ["p07", "p08"],
+    ["p07", "p08", "p09"],
+    ["p10", "p11"],
+    ["p01", "p10"],
+    ["p04", "p07"],
+    ["p02", "p03", "p01"]
+  ]
+}

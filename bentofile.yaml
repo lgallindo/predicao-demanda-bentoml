@@ -1,0 +1,13 @@
+service: "service:PreditorDemanda"
+labels:
+  aula: predicao-demanda
+include:
+  - "*.py"
+  - "dados/*.json"
+python:
+  packages:
+    - bentoml
+    - scikit-learn
+    - numpy
+models:
+  - predicao-demanda:latest
