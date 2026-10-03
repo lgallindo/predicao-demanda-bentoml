@@ -12,17 +12,5 @@
     {"id": "p10", "nome": "Cesto de palha", "tecnica": "cestaria", "regiao": "Comunidade do Pilar", "pedidos": 24},
     {"id": "p11", "nome": "Bolsa de palha", "tecnica": "cestaria", "regiao": "Comunidade do Pilar", "pedidos": 14},
     {"id": "p12", "nome": "Sousplat de palha", "tecnica": "cestaria", "regiao": "Alto do Moura", "pedidos": 8}
-  ],
-  "cestas": [
-    ["p01", "p02", "p03"],
-    ["p01", "p02"],
-    ["p04", "p05", "p06"],
-    ["p04", "p05"],
-    ["p07", "p08"],
-    ["p07", "p08", "p09"],
-    ["p10", "p11"],
-    ["p01", "p10"],
-    ["p04", "p07"],
-    ["p02", "p03", "p01"]
   ]
 }

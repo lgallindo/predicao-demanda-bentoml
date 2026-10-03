@@ -10,6 +10,7 @@ import bentoml
 import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import Ridge
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
@@ -26,7 +27,7 @@ def main() -> None:
     regioes = [p["regiao"] for p in produtos]
     y = np.array([float(p["pedidos"]) for p in produtos], dtype=float)
 
-    # X tabular: só atributos categóricos (técnica, região)
+    # X tabular: só atributos categóricos (técnica, região) → OneHot no Pipeline
     X = np.column_stack([tecnicas, regioes])
     pipe = Pipeline(
         steps=[
@@ -47,13 +48,17 @@ def main() -> None:
     )
     pipe.fit(X, y)
     y_hat = pipe.predict(X)
-    mae = float(np.mean(np.abs(y - y_hat)))
+    mae = float(mean_absolute_error(y, y_hat))
+    rmse = float(mean_squared_error(y, y_hat) ** 0.5)
+    r2 = float(r2_score(y, y_hat))
 
     artefato = {
         "pipeline": pipe,
         "produtos": {p["id"]: p for p in produtos},
         "ids": ids,
         "mae_treino": mae,
+        "rmse_treino": rmse,
+        "r2_treino": r2,
         "estrategia": "ridge_tecnica_regiao",
         "alvo": "pedidos",
     }
@@ -64,6 +69,8 @@ def main() -> None:
         metadata={
             "n_produtos": len(produtos),
             "mae_treino": mae,
+            "rmse_treino": rmse,
+            "r2_treino": r2,
             "estrategia": artefato["estrategia"],
         },
     ) as model:
@@ -72,6 +79,8 @@ def main() -> None:
 
     print(f"produtos     {len(produtos)}")
     print(f"mae_treino   {mae:.3f}")
+    print(f"rmse_treino  {rmse:.3f}")
+    print(f"r2_treino    {r2:.3f}")
     print(f"tag store    {tag}")
 
 
